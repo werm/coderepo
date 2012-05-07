@@ -1,0 +1,10 @@
+<% @snippets.each do |snippet| %>
+<div class="snippet span3">
+<h3 class="copy-snippet"><%= snippet.name %></h3>
+  <p><%= snippet.language %></p>
+  <pre><code class="clippy"><%= snippet.plain_code %></code></pre>
+    <%= link_to 'Show', snippet %>
+    <%= link_to 'Edit', edit_snippet_path(snippet) %>
+    <%= link_to 'Destroy', snippet, confirm: 'Are you sure?', method: :delete %>
+</div>
+<% end %>

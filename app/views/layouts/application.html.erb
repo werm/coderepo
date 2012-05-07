@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Code</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="/">Snippets</a>
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li class="divider-vertical"></li>
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Filter  <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">JS</a></li>
+            <li><a href="#">Ruby</a></li>
+            <li><a href="#">Markdown</a></li>
+            <li><a href="#">PHP</a></li>
+            <li><a href="#">Apache</a></li>
+            <li><a href="#">Nginx</a></li>
+          </ul>
+          <li class="divider-vertical"></li>
+          <li><i class="icon-plus"></i><%= link_to 'Snippet', new_snippet_path, :class => 'add-snippet' %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>  
+<div class="container">
+  <div class="row-fluid">
+    <div class="span12">
+        <%= yield %>
+    </div>
+  </div>
+</div>
+</body>
+</html>
